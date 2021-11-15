@@ -1,0 +1,16 @@
+{
+  "name": "vango-iconfont",
+  "version": "0.0.0",
+  "scripts": {
+    "view": "vite",
+    "lib": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.2.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.5.1"
+  }
+}
