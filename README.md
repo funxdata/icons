@@ -2,6 +2,12 @@
 
 梵响图标打包工具
 
+### 运行
+
+```
+ npm install
+
+```
 
 ### 运行
 
@@ -19,4 +25,9 @@
 ### 使用
 ```
 https://book.funxdata.com/iconfonts/funxdataicons.css
+```
+
+### 预览
+```
+https://ui.funxdata.com
 ```
