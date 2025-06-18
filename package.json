@@ -1,16 +1,19 @@
 {
-  "name": "vango-iconfont",
-  "version": "0.0.0",
+  "name": "funxicons",
+  "version": "0.0.1",
+  "description": "funxdata ui icons",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "view": "vite",
-    "lib": "vite build"
+    "pack": "node ./src/pack.js",
+    "public": "node ./src/public.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "funxdata",
+  "license": "ISC",
   "dependencies": {
-    "vue": "^3.2.6"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^1.6.0",
-    "@vue/compiler-sfc": "^3.0.5",
-    "vite": "^2.5.1"
+    "@aws-sdk/client-s3": "^3.830.0",
+    "fantasticon": "^3.0.0",
+    "upyun": "^3.4.6"
   }
 }
