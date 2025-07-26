@@ -28,8 +28,8 @@ jobs:
       # 第四步：上传文件
       - name: Upload files to Upyun via custom script
         env:
-          UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
-          UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
+          AccessKey: ${{ secrets.AccessKey }}
+          SecretAccessKey: ${{ secrets.SecretAccessKey }}
           UPX_SERVICENAME: ${{ secrets.UPX_SERVICENAME }}
-        run: node upload-upyun.js
+        run: npm run public
     
