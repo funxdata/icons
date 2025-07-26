@@ -1,9 +1,10 @@
 // import Upyun from 'upyun'
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
-import fs from 'fs/promises';
-import path from 'path';
-const fileData = await fs.readFile('./upconfig.json', 'utf-8');
-const UpyunCfgJson = JSON.parse(fileData);
+const UpyunCfgJson = {
+  AccessKey: process.env.AccessKey,
+  SecretAccessKey: process.env.SecretAccessKey,
+  bucketname: process.env.UPX_SERVICENAME,
+};
 const s3 = new S3Client({
   endpoint: "https://s3.api.upyun.com", // 又拍云提供的 S3 Endpoint
   region: "us-east-1",                         // 固定即可（又拍云不依赖 region）

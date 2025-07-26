@@ -4,12 +4,6 @@ import { UpfileToUpYun,readDirFiles } from "./upfiles.js";
 const dir_files = await readDirFiles('./public')
 for (let index = 0; index < dir_files.length; index++) {
     const element = dir_files[index];
-    let res = await UpfileToUpYun("iconfonts",element)
-    // console.log(res)
-}
-const fonst_files = await readDirFiles('./public/fonts')
-for (let index = 0; index < fonst_files.length; index++) {
-    const element = fonst_files[index];
-    let res = await UpfileToUpYun("iconfonts/fonts",element)
+    let res = await UpfileToUpYun("uifonts",element)
     // console.log(res)
 }
