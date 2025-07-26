@@ -2,7 +2,7 @@ name: funxdataicons
 
 on:
   push:
-    branches: [main] # 替换为你的实际分支名
+    branches: [main]
 
 jobs:
   build:
@@ -21,15 +21,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 第三步：运行打包命令
+      # ✅ 第三步：创建 public 目录（如不存在）
+      - name: Ensure public directory exists
+        run: mkdir -p public
+
+      # 第四步：运行打包命令
       - name: Run npm pack
         run: npm run pack
 
-      # 第四步：上传文件
+      # 第五步：上传文件到 Upyun
       - name: Upload files to Upyun via custom script
         env:
           AccessKey: ${{ secrets.AccessKey }}
           SecretAccessKey: ${{ secrets.SecretAccessKey }}
           UPX_SERVICENAME: ${{ secrets.UPX_SERVICENAME }}
         run: npm run public
-    
