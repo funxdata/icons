@@ -6,14 +6,13 @@
   "type": "module",
   "scripts": {
     "pack": "node ./src/pack.js",
-    "public": "node ./src/public.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "public": "node ./src/public.js"
   },
   "author": "funxdata",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.830.0",
-    "fantasticon": "^3.0.0",
-    "upyun": "^3.4.6"
+    "@aws-sdk/client-s3": "3.850.0",
+    "upyun": "^3.4.6",
+    "webfont": "^11.2.26"
   }
 }

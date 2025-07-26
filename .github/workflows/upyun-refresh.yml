@@ -1,0 +1,37 @@
+name: funxdataicons
+
+on:
+  push:
+    branches: [main] # 替换为你的实际分支名
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 第一步：Checkout 代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 第二步：安装 Node.js 和依赖
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      # 第三步：运行打包命令
+      - name: Run npm pack
+        run: npm run pack
+
+      # 第四步：上传文件
+      - name: deploy-upyun
+        uses: bwcxyk/upyun-upx-action@1.3
+        env:
+          UPX_SERVICENAME: ${{ secrets.UPX_SERVICENAME }}
+          UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
+          UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
+          LOCAL_DIR: public
+          REMOTE_DIR: /icons
+    
