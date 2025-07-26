@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-s3": "3.850.0",
-    "upyun": "^3.4.6",
-    "webfont": "^11.2.26"
+    "fantasticon": "^3.0.0",
+    "upyun": "^3.4.6"
   }
 }
