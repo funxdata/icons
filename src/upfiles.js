@@ -1,4 +1,6 @@
 // import Upyun from 'upyun'
+import fs from 'node:fs/promises'; // 推荐使用 promises API
+import path from 'node:path';
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 const UpyunCfgJson = {
   AccessKey: process.env.AccessKey,
@@ -36,18 +38,15 @@ export const UpfileToUpYun=async (remoteDir,local_file)=>{
 }
 
 
-export const readDirFiles=async (dirPath)=>{
-    try {
-      const entries = await fs.readdir(dirPath, { withFileTypes: true });
-  
-      const files = entries
-        .filter(entry => entry.isFile())               // 仅保留文件
-        .map(entry => path.join(dirPath, entry.name)); // 拼接完整路径
-  
-      return files;
-    } catch (err) {
-    //   console.error('❌ 读取目录失败:', err);
-      return [];
-    }
+export const readDirFiles = async (dirPath) => {
+  try {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true })
+    return entries
+      .filter(entry => entry.isFile())
+      .map(entry => path.join(dirPath, entry.name))
+  } catch (err) {
+    console.error('❌ 读取失败:', err)
+    return []
   }
+}
 
