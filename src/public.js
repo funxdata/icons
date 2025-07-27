@@ -13,6 +13,6 @@ const dir_files = await readDirFiles(publicDir)
 console.log(dir_files)
 for (let index = 0; index < dir_files.length; index++) {
     const element = dir_files[index];
-    let res = await UpfileToUpYun("uifonts",element)
-    console.log(res)
+    let res = await UpfileToUpYun("uiicons",element)
+    // console.log(res)
 }
